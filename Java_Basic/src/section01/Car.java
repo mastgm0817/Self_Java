@@ -1,3 +1,4 @@
+package section01;
 public class Car {
     private int maxSpeed;
     private String manufacturer = "현대자동차";
