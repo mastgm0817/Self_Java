@@ -1,4 +1,4 @@
-package section01;
+package section01.carpack;
 public class Car {
     private int maxSpeed;
     private String manufacturer = "현대자동차";

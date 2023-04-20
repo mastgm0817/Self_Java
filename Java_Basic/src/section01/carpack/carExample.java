@@ -1,6 +1,5 @@
-import section01.Car;
-
-public class App {
+package section01.carpack;
+public class carExample {
     public static void main(String[] args) throws Exception {
         Car car1 = new Car("람보르기니","검정");
         car1.setGas(5);
