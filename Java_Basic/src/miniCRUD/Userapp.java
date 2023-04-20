@@ -36,34 +36,46 @@ public class Userapp {
                 // read User data
                 break;
                 case 2:
-                System.out.println("검색할 유저 아이디를 입력해주세요: ");
-                int search = sc.nextInt();
-                for(User u: users){
-                    if(u.getId() == search){
-                        System.out.println(u.getId());
-                        System.out.println(u.getName());
-                    }
-                    else{
-                        System.out.println("찾으시는 아이디가 없습니다.");
-                    }
+                if(users.isEmpty()){
+                    System.out.println("저장된 유저 정보가 없습니다.");
+                    break;
                 }
-                break;
+                else{
+                    System.out.println("검색할 유저 아이디를 입력해주세요: ");
+                    int search = sc.nextInt();
+                    for(User u: users){
+                        if(u.getId() == search){
+                            System.out.println(u.getId());
+                            System.out.println(u.getName());
+                        }
+                        else{
+                            System.out.println("찾으시는 아이디가 없습니다.");
+                        }
+                    }
+                    break;
+                }
                 // update User data
                 case 3:
-                System.out.println("수정할 유저 아이디를 입력해주세요: ");
-                int updateId = sc.nextInt();
-                for(User u: users){
-                    if(u.getId() == updateId){
-                        System.out.println("이름을 뭐로 변경하시겠어요?: ");
-                        String updateName = sc.next();
-                        u.setName(updateName);
-                        System.out.println("이름이" + u.getName()+ "로 수정되었습니다.");
-                    }
-                    else{
-                        System.out.println("찾으시는 아이디가 없습니다.");
-                    }
+                if(users.isEmpty()){
+                    System.out.println("저장된 유저 정보가 없습니다.");
+                    break;
                 }
-                break;
+                else{
+                    System.out.println("수정할 유저 아이디를 입력해주세요: ");
+                    int updateId = sc.nextInt();
+                    for(User u: users){
+                        if(u.getId() == updateId){
+                            System.out.println("이름을 뭐로 변경하시겠어요?: ");
+                            String updateName = sc.next();
+                            u.setName(updateName);
+                            System.out.println("이름이" + u.getName()+ "로 수정되었습니다.");
+                        }
+                        else{
+                            System.out.println("찾으시는 아이디가 없습니다.");
+                        }
+                    }
+                    break;
+                }
                 // delete User data
                 case 4:
                 System.out.println("삭제할 유저 아이디를 입력해주세요: ");
